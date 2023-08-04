@@ -1,74 +1,81 @@
 import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
 } from "@/components/ui/tabs"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+
 
 export function TabsDemo() {
-  return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password">Password</TabsTrigger>
-      </TabsList>
-      <TabsContent value="account">
-        <Card>
-          <CardHeader>
-            <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when youre done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="password">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, youll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
-  )
+    return (
+        <Tabs defaultValue="login" className="w-[400px]">
+            <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="login">Login</TabsTrigger>
+                <TabsTrigger value="register">Register</TabsTrigger>
+            </TabsList>
+            <TabsContent value="login">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Đăng nhập</CardTitle>
+                        <CardDescription>
+                            Nhập số điện thoại hoặc email và mật khẩu của bạn.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                        <div className="space-y-1">
+                            <Label htmlFor="current">Email or phonenumber</Label>
+                            <div className="flex flex-row items-center gap-2">
+                                <label className="w-1/12 whitespace-nowrap"><FontAwesomeIcon className="text-sm" icon={faEnvelope} /></label>
+                                <Input className="w-11/12" id="emailOrPhonenumber" type="email" />
+                            </div>
+                        </div>
+                        <div className="space-y-1">
+                            <Label htmlFor="password">Your password</Label>
+                            <Input id="password" type="password" />
+                        </div>
+                    </CardContent>
+                    <CardFooter>
+                        <Button>Login</Button>
+                    </CardFooter>
+                </Card>
+            </TabsContent>
+            <TabsContent value="register">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Password</CardTitle>
+                        <CardDescription>
+                            Change your password here. After saving, youll be logged out.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                        <div className="space-y-1">
+                            <Label htmlFor="current">Current password</Label>
+                            <Input id="current" type="password" />
+                        </div>
+                        <div className="space-y-1">
+                            <Label htmlFor="new">New password</Label>
+                            <Input id="new" type="password" />
+                        </div>
+                    </CardContent>
+                    <CardFooter>
+                        <Button>Save password</Button>
+                    </CardFooter>
+                </Card>
+            </TabsContent>
+        </Tabs>
+
+    )
 }

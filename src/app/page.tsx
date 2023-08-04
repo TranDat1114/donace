@@ -1,9 +1,10 @@
-import Image from 'next/image'
+import { TabsDemo } from "@/components/ui/pageComponent/loginNRegister"
 
 export default function Home() {
   return (
-    <div>
-      
+    <div className="p-4">
+      <TabsDemo/>
+
     </div>
   )
 }

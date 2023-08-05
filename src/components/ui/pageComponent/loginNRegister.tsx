@@ -38,7 +38,9 @@ export function TabsDemo() {
                         <div className="space-y-1">
                             <Label htmlFor="current">Email or phonenumber</Label>
                             <div className="flex flex-row items-center gap-2">
-                                <label className="w-1/12 whitespace-nowrap"><FontAwesomeIcon className="text-sm" icon={faEnvelope} /></label>
+                                <label className="w-1/12 whitespace-nowrap"><FontAwesomeIcon className="text-sm hidden" icon={faEnvelope} />
+                                <FontAwesomeIcon className="text-sm" icon={faPhone} />
+                                </label>
                                 <Input className="w-11/12" id="emailOrPhonenumber" type="email" />
                             </div>
                         </div>

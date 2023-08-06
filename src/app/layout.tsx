@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from '@/components/ui/changeThemeModeButton'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
+import { DialogDemo } from '@/components/loginNRegister'
 
 const inter = Inter({ subsets: ['vietnamese'] })
 
@@ -46,7 +47,7 @@ export default function RootLayout({
                     <Input className="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" type="text" placeholder="Search..." />
                   </div>
                   <nav className="flex items-center">
-
+                    <DialogDemo />
                     <ModeToggle />
                   </nav>
                 </div>
